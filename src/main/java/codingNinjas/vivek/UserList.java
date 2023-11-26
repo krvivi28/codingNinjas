@@ -1,6 +1,9 @@
 package codingNinjas.vivek;
 
+import java.util.ArrayList;
+
 public interface UserList {
-public void getUserList ();
-public void addUser();
+	public ArrayList<User> getUserList();
+
+	public void addUser(User user);
 }

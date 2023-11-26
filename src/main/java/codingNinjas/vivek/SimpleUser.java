@@ -3,7 +3,7 @@ package codingNinjas.vivek;
 public class SimpleUser implements User {
 
 	String name;
-	String age;
+	int age;
 	String location;
 	String collegeName;
 
@@ -15,7 +15,7 @@ public class SimpleUser implements User {
 	}
 
 	@Override
-	public void setUserDetails(String name, String age, String location, String college) {
+	public void setUserDetails(String name, int age, String location, String college) {
 		this.name = name;
 		this.age = age;
 		this.location = location;

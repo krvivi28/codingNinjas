@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- bean definitions here -->
+	<!-- bean definitions here -->
+	<bean id="simpleUser" class="codingNinjas.vivek.SimpleUser" scope="prototype"></bean>
+	
+		<bean id="userList" class="codingNinjas.vivek.SimpleUserList"
+		scope="prototype"></bean>
 
+	<bean id="javaInstructor" class="codingNinjas.vivek.JavaInstructor"
+		init-method="init" destroy-method="destroy"></bean>
+		
+	<bean id="springInstructor" class="codingNinjas.vivek.SpringInstructor"
+		init-method="init" destroy-method="destroy"></bean>
+		
+		
+	<bean id="javaCourse" class="codingNinjas.vivek.PaidCourse">
+		<constructor-arg ref="javaInstructor"></constructor-arg>
+		<constructor-arg ref="userList"></constructor-arg>
+	</bean>
+
+	<bean id="springCourse" class="codingNinjas.vivek.PaidCourse">
+		<constructor-arg ref="springInstructor"></constructor-arg>
+		<constructor-arg ref="userList"></constructor-arg>
+	</bean>
 </beans>

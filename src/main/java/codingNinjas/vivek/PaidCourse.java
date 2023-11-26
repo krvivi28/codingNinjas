@@ -3,8 +3,15 @@ package codingNinjas.vivek;
 public class PaidCourse implements Course {
 	
 	String courseName;
-	Instructor courseInstructor;
-	UserList userList;
+	public Instructor courseInstructor;
+	public UserList userList;
+	
+	public PaidCourse(Instructor courseInstructor,
+	UserList userList )
+	{
+		this.courseInstructor=courseInstructor;
+		this.userList=userList;
+	}
 
 	@Override
 	public void setCourseDetail(String courseName) {
@@ -19,14 +26,14 @@ public class PaidCourse implements Course {
 	}
 
 	@Override
-	public void getInstructor() {
-		// TODO Auto-generated method stub
+	public Instructor getInstructor() {
+		return this.courseInstructor;
 
 	}
 
 	@Override
-	public void getCourseName() {
-		// TODO Auto-generated method stub
+	public String getCourseName() {
+		return this.courseName;
 
 	}
 
